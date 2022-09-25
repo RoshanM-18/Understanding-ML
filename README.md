@@ -6,5 +6,8 @@
 <br>
 <a href="https://www.youtube.com/embed/VMj-3S1tku0"> Link to this masterpiece </a> 
 
+<hr>
+
 <b>MakeMore</b> another great lecture by Andrej Karpathy.
+<br>
 <a href="https://youtu.be/PaCmpygFfXo"> Link to the lecture of MakeMore.
