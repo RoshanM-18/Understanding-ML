@@ -30,12 +30,8 @@ def variance(vals, mean):
 
 def covariance(x, mean_x, mean_y, y):
 
-    covar = 0.0
-    for i in range(len(x)):
-        covar += (x[i]-mean_x) * (y[i]-mean_y)
-
-    return covar
-
+    return sum([(x[i]-mean_x) * (y[i]-mean_y) for i in range(len(x))])
+    
 def coefficients(X, y):
 
     mean_x, mean_y = mean(X), mean(y)
@@ -53,18 +49,10 @@ def simple_linear_regression(X_train, X_test, y_train):
 
 def rmse(y_true, y_pred):
 
-    error = 0.00
-
-    for i in range(len(y_pred)):
-        error += (y_true[i] - y_pred[i])**2 
-
-    mean_error = error/len(y_true)
-
-    return math.sqrt(mean_error)
+    return math.sqrt(sum([(y_true[i] - y_pred[i])**2 for i in range(len(y_pred))])/len(y_true))
 
 preds = simple_linear_regression(X_train, X_test, y_train)
-rmse = rmse(y_test, preds)
 
 print(preds)
 print("-"*50)
-print(rmse)
+print(rmse(y_test, preds))
